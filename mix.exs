@@ -38,7 +38,9 @@ defmodule ChargebeeElixir.MixProject do
       {:mox, "~>1.0", only: [:test]},
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
       {:dialyxir, ">= 0.0.0", only: [:dev], runtime: false},
-      {:ex_check, "~> 0.14.0", only: [:dev], runtime: false}
+      {:ex_check, "~> 0.14.0", only: [:dev], runtime: false},
+      {:typed_ecto_schema, "~> 0.2"},
+      {:struct_access, "~> 1.1.2"}
     ]
   end
 end
