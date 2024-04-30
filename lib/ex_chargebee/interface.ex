@@ -8,6 +8,7 @@ defmodule ExChargebee.Interface do
    - Alternative HTTP Clients configured from  Application env `:ex_chargebee, :http_client` (i.e. in testing)
   """
   alias ExChargebee.Interface.ParameterSerializer
+  require Logger
 
   def get(path) do
     get(path, %{})
@@ -73,6 +74,7 @@ defmodule ExChargebee.Interface do
   end
 
   defp handle_response(%{} = response, path, data) do
+    Logger.error("Unknown error: #{inspect(response)}, path: #{path}, data: #{data}")
     raise ExChargebee.UnknownError, path: path, data: data, response: response
   end
 
